@@ -1,0 +1,103 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eye-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 0 40px;
+}
+
+.eyebrow {
+    width: 140px;
+    height: 15px;
+    background-color: black;
+    border-radius: 40% 40% 0 0;
+    position: relative;
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+.eyebrow:before, .eyebrow:after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    top: -5px;
+}
+
+.eyebrow:before {
+    left: -10px;
+}
+
+.eyebrow:after {
+    right: -10px;
+}
+
+.eye {
+    width: 120px;
+    height: 80px;
+    background-color: white;
+    border: 5px solid black;
+    border-radius: 50% / 40%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.pupil {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+}
+
+.eyelash-top, .eyelash-bottom {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 150%;
+    height: 10px;
+}
+
+.eyelash-top {
+    top: -10px;
+    flex-direction: row-reverse;
+}
+
+.eyelash-bottom {
+    bottom: -10px;
+}
+
+.eyelash-top div, .eyelash-bottom div {
+    width: 1px;
+    height: 10px;
+    background-color: black;
+    transform-origin: bottom;
+    border-radius: 50%;
+}
+
+.eyelash-top div:nth-child(1) { transform: rotate(20deg); }
+.eyelash-top div:nth-child(2) { transform: rotate(10deg); }
+.eyelash-top div:nth-child(3) { transform: rotate(0deg); }
+.eyelash-top div:nth-child(4) { transform: rotate(-10deg); }
+.eyelash-top div:nth-child(5) { transform: rotate(-20deg); }
+
+.eyelash-bottom div:nth-child(1) { transform: rotate(10deg); }
+.eyelash-bottom div:nth-child(2) { transform: rotate(0deg); }
+.eyelash-bottom div:nth-child(3) { transform: rotate(-10deg); }
